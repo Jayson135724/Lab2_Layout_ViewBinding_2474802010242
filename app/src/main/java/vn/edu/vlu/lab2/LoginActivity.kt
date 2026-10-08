@@ -37,6 +37,9 @@ class LoginActivity : AppCompatActivity() {
 
     private fun setupUI() {
         binding.btnLogin.setOnClickListener { handleLogin() }
+        binding.tvForgotPassword.setOnClickListener {
+            Toast.makeText(this, R.string.msg_forgot_password, Toast.LENGTH_SHORT).show()
+        }
     }
 
     private fun handleLogin() {

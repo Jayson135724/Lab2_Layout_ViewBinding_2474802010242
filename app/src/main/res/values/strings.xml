@@ -12,6 +12,8 @@
     <string name="err_email_invalid">Email không hợp lệ</string>
     <string name="err_password_short">Mật khẩu tối thiểu 6 ký tự</string>
     <string name="status_login_ok">Đăng nhập thành công: %1$s</string>
+    <string name="forgot_password">Quên mật khẩu?</string>
+    <string name="msg_forgot_password">Vui lòng liên hệ phòng CNTT để cấp lại mật khẩu</string>
 
     <!-- Profile -->
     <string name="avatar_desc">Ảnh đại diện</string>
