@@ -6,6 +6,7 @@
     <string name="login_title">ĐĂNG NHẬP HỆ THỐNG</string>
     <string name="hint_email">Địa chỉ Email</string>
     <string name="hint_password">Mật khẩu</string>
+    <string name="cb_show_password">Hiện mật khẩu</string>
     <string name="btn_login">ĐĂNG NHẬP</string>
     <string name="msg_missing_info">Vui lòng nhập email và mật khẩu</string>
     <string name="status_missing">Trạng thái: Vui lòng điền đủ dữ liệu</string>

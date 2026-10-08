@@ -2,6 +2,7 @@ package vn.edu.vlu.lab2
 
 import android.content.Intent
 import android.os.Bundle
+import android.text.method.PasswordTransformationMethod
 import android.util.Patterns
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
@@ -37,6 +38,12 @@ class LoginActivity : AppCompatActivity() {
 
     private fun setupUI() {
         binding.btnLogin.setOnClickListener { handleLogin() }
+        binding.cbShowPassword.setOnCheckedChangeListener { _, isChecked ->
+            binding.edtPassword.transformationMethod =
+                if (isChecked) null                                  // hiện ký tự
+                else PasswordTransformationMethod.getInstance()
+            binding.edtPassword.setSelection(binding.edtPassword.text.length) // giữ con trỏ cuối
+        }
         binding.tvForgotPassword.setOnClickListener {
             Toast.makeText(this, R.string.msg_forgot_password, Toast.LENGTH_SHORT).show()
         }

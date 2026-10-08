@@ -4,6 +4,7 @@
     <string name="login_title">SYSTEM LOGIN</string>
     <string name="hint_email">Email address</string>
     <string name="hint_password">Password</string>
+    <string name="cb_show_password">Show password</string>
     <string name="btn_login">LOG IN</string>
     <string name="msg_missing_info">Please enter your email and password</string>
     <string name="status_missing">Status: Please fill in all fields</string>
