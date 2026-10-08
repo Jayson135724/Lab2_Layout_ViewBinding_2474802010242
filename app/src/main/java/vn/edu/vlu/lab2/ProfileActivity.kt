@@ -28,5 +28,12 @@ class ProfileActivity : AppCompatActivity() {
             )
             insets
         }
+
+        binding.tvValueEmail.text = intent.getStringExtra(EXTRA_EMAIL).orEmpty()
+        binding.btnLogout.setOnClickListener { finish() }   // quay lại màn hình Login
+    }
+
+    companion object {
+        const val EXTRA_EMAIL = "extra_email"
     }
 }
