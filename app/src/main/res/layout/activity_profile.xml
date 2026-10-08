@@ -6,12 +6,13 @@
     android:layout_height="match_parent"
     android:padding="24dp">
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideLabel"
+    <!-- Rào chắn dịch theo nhãn dài nhất: cột giá trị luôn nằm sau nhãn -->
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrierLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.3" />
+        app:barrierDirection="end"
+        app:constraint_referenced_ids="tvLabelEmail,tvLabelMssv,tvLabelClass,tvLabelPhone" />
 
     <ImageView
         android:id="@+id/imgAvatar"
@@ -65,10 +66,11 @@
         android:id="@+id/tvValueEmail"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
         android:textSize="16sp"
         app:layout_constraintBaseline_toBaselineOf="@id/tvLabelEmail"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@id/guideLabel" />
+        app:layout_constraintStart_toEndOf="@id/barrierLabel" />
 
     <!-- Hàng 2: MSSV -->
     <TextView
@@ -85,11 +87,12 @@
         android:id="@+id/tvValueMssv"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
         android:text="@string/value_mssv"
         android:textSize="16sp"
         app:layout_constraintBaseline_toBaselineOf="@id/tvLabelMssv"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@id/guideLabel" />
+        app:layout_constraintStart_toEndOf="@id/barrierLabel" />
 
     <!-- Hàng 3: Lớp -->
     <TextView
@@ -106,11 +109,34 @@
         android:id="@+id/tvValueClass"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
         android:text="@string/value_class"
         android:textSize="16sp"
         app:layout_constraintBaseline_toBaselineOf="@id/tvLabelClass"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@id/guideLabel" />
+        app:layout_constraintStart_toEndOf="@id/barrierLabel" />
+
+    <!-- Hàng 4: Số điện thoại -->
+    <TextView
+        android:id="@+id/tvLabelPhone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/label_phone"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvLabelClass" />
+
+    <TextView
+        android:id="@+id/tvValuePhone"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="@string/value_phone"
+        android:textSize="16sp"
+        app:layout_constraintBaseline_toBaselineOf="@id/tvLabelPhone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/barrierLabel" />
 
     <!-- Hai nút: chain ngang, chia đều -->
     <Button
@@ -124,7 +150,7 @@
         app:layout_constraintHorizontal_chainStyle="spread"
         app:layout_constraintHorizontal_weight="1"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvLabelClass" />
+        app:layout_constraintTop_toBottomOf="@id/tvLabelPhone" />
 
     <Button
         android:id="@+id/btnLogout"
