@@ -24,7 +24,7 @@
             android:layout_width="96dp"
             android:layout_height="96dp"
             android:contentDescription="@string/logo_desc"
-            android:src="@android:drawable/ic_dialog_info"
+            android:src="@drawable/vlu_logo"
             app:layout_constraintBottom_toTopOf="@id/tvTitle"
             app:layout_constraintEnd_toStartOf="@id/guideForm"
             app:layout_constraintStart_toStartOf="parent"
