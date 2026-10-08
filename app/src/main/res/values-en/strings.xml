@@ -16,13 +16,13 @@
 
     <!-- Profile -->
     <string name="avatar_desc">Profile picture</string>
-    <string name="profile_name">Nguyen Van A</string>
+    <string name="profile_name">Vo Hoang Minh</string>
     <string name="profile_role">Information Technology student</string>
     <string name="label_email">Email</string>
     <string name="label_mssv">Student ID</string>
     <string name="label_class">Class</string>
     <string name="label_phone">Phone number</string>
-    <string name="value_mssv">22A001</string>
+    <string name="value_mssv">2474802010242</string>
     <string name="value_class">CD22TT1</string>
     <string name="value_phone">0901 234 567</string>
     <string name="btn_edit">Edit</string>
