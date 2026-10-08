@@ -42,7 +42,7 @@ class LoginActivity : AppCompatActivity() {
             binding.edtPassword.transformationMethod =
                 if (isChecked) null                                  // hiện ký tự
                 else PasswordTransformationMethod.getInstance()
-            binding.edtPassword.setSelection(binding.edtPassword.text.length) // giữ con trỏ cuối
+            binding.edtPassword.setSelection(binding.edtPassword.length()) // giữ con trỏ cuối
         }
         binding.tvForgotPassword.setOnClickListener {
             Toast.makeText(this, R.string.msg_forgot_password, Toast.LENGTH_SHORT).show()
@@ -50,12 +50,12 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun handleLogin() {
-        val email = binding.edtEmail.text.toString().trim()
-        val password = binding.edtPassword.text.toString().trim()
+        val email = binding.edtEmail.text?.toString().orEmpty().trim()
+        val password = binding.edtPassword.text?.toString().orEmpty().trim()
 
         // Xóa thông báo lỗi của lần bấm trước
-        binding.edtEmail.error = null
-        binding.edtPassword.error = null
+        binding.tilEmail.error = null
+        binding.tilPassword.error = null
 
         when {
             email.isEmpty() || password.isEmpty() -> {
@@ -63,9 +63,9 @@ class LoginActivity : AppCompatActivity() {
                 binding.tvStatus.setText(R.string.status_missing)
             }
             !Patterns.EMAIL_ADDRESS.matcher(email).matches() ->
-                binding.edtEmail.error = getString(R.string.err_email_invalid)
+                binding.tilEmail.error = getString(R.string.err_email_invalid)
             password.length < 6 ->
-                binding.edtPassword.error = getString(R.string.err_password_short)
+                binding.tilPassword.error = getString(R.string.err_password_short)
             else -> {
                 // Xác thực GIẢ LẬP: chưa gọi máy chủ. Xác thực thật ở các buổi sau.
                 binding.tvStatus.text = getString(R.string.status_login_ok, email)
