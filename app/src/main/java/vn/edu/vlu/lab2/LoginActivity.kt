@@ -1,5 +1,6 @@
 package vn.edu.vlu.lab2
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Patterns
 import android.widget.Toast
@@ -55,9 +56,13 @@ class LoginActivity : AppCompatActivity() {
                 binding.edtEmail.error = getString(R.string.err_email_invalid)
             password.length < 6 ->
                 binding.edtPassword.error = getString(R.string.err_password_short)
-            else ->
+            else -> {
                 // Xác thực GIẢ LẬP: chưa gọi máy chủ. Xác thực thật ở các buổi sau.
                 binding.tvStatus.text = getString(R.string.status_login_ok, email)
+                val intent = Intent(this, ProfileActivity::class.java)
+                intent.putExtra(ProfileActivity.EXTRA_EMAIL, email)
+                startActivity(intent)
+            }
         }
     }
 }
