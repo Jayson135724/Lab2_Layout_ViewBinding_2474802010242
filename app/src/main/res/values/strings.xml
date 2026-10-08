@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Lab2_Layout_ViewBinding</string>
+    <string name="app_name" translatable="false">Lab2_Layout_ViewBinding</string>
 
     <!-- Login -->
     <string name="logo_desc">Logo VLU</string>
