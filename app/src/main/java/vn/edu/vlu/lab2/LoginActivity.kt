@@ -22,7 +22,7 @@ class LoginActivity : AppCompatActivity() {
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Giữ padding 24dp của layout và cộng thêm phần thanh hệ thống/bàn phím
+        // Đệm ScrollView theo thanh hệ thống/bàn phím để form cuộn được khi bàn phím hiện
         val basePadding = binding.root.paddingTop
         ViewCompat.setOnApplyWindowInsetsListener(binding.root) { v, insets ->
             val bars = insets.getInsets(WindowInsetsCompat.Type.systemBars() or WindowInsetsCompat.Type.ime())
